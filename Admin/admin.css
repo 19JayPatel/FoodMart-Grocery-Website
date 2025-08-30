@@ -1,0 +1,45 @@
+﻿body {
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16.666%; /* col-md-2 */
+}
+
+    .sidebar a {
+        color: white;
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .sidebar a:hover {
+            background-color: #FFC43F;
+            color: black;
+        }
+
+        .sidebar a i {
+            margin-right: 8px;
+        }
+
+main {
+    margin-left: 16.666%;
+}
+
+.card {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* default soft shadow */
+    border-radius: 12px; /* smooth rounded corners */
+    cursor: pointer; /* make it feel clickable */
+}
+
+    .card:hover {
+        transform: translateY(-5px); /* lift up */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); /* deeper shadow */
+    }
