@@ -38,15 +38,12 @@ CREATE DATABASE FoodMart;
 CREATE TABLE [dbo].[Admin_tbl] (
     [AdminID]  INT           IDENTITY (1, 1) NOT NULL,
     [Username] VARCHAR (MAX) NOT NULL,
-    [Password] VARCHAR (MAX) NOT NULL,
-    PRIMARY KEY CLUSTERED ([AdminID] ASC)
+    [Password] VARCHAR (MAX) NOT NULL
 );
 
 CREATE TABLE [dbo].[Categories] (
     [CategoryID]   INT            IDENTITY (1, 1) NOT NULL,
-    [CategoryName] NVARCHAR (MAX) NOT NULL,
-    PRIMARY KEY CLUSTERED ([CategoryID] ASC),
-    UNIQUE NONCLUSTERED ([CategoryName] ASC)
+    [CategoryName] NVARCHAR (MAX) NOT NULL
 );
 
 CREATE TABLE [dbo].[Products_tbl] (
@@ -56,8 +53,7 @@ CREATE TABLE [dbo].[Products_tbl] (
     [Price]        NVARCHAR (MAX) NOT NULL,
     [CategoryID]   INT            NOT NULL,
     [CategoryName] NVARCHAR (MAX) NOT NULL,
-    [ProductImage] NVARCHAR (MAX) NOT NULL,
-    PRIMARY KEY CLUSTERED ([ProductID] ASC)
+    [ProductImage] NVARCHAR (MAX) NOT NULL
 );
 
 CREATE TABLE [dbo].[User_tbl] (
@@ -65,8 +61,7 @@ CREATE TABLE [dbo].[User_tbl] (
     [FullName] NVARCHAR (MAX) NOT NULL,
     [Email]    NVARCHAR (MAX) NOT NULL,
     [PNumber]  NVARCHAR (MAX) NOT NULL,
-    [Password] NVARCHAR (MAX) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+    [Password] NVARCHAR (MAX) NOT NULL
 );
 
 ```
