@@ -30,7 +30,7 @@ An **Admin Panel** is provided for managing categories, products, and users.
 ```bash
 git clone https://github.com/19JayPatel/FoodMart-Grocery-Website.git
 ```
-
+---
 ## 📸 Screenshots
 
 ### Home Page
