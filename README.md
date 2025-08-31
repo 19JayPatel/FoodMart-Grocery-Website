@@ -28,4 +28,4 @@ An **Admin Panel** is provided for managing categories, products, and users.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/FoodMart-ASP.NET.git
+git clone https://github.com/19JayPatel/FoodMart-Grocery-Website.git
