@@ -12,7 +12,28 @@
     <style>
         body {
             background: #f8f9fa;
+            background-image: url("/images/login-bg1.png");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
         }
+
+            /* Add a pseudo-element for blur effect */
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: inherit;
+                background-image: inherit;
+                background-size: cover;
+                background-position: center;
+                z-index: 0;
+                filter: blur(10px); /* Change 10px to your desired blur strength */
+            }
 
         .signup-container {
             max-width: 450px;
@@ -22,6 +43,8 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
             .signup-container h3 {
@@ -40,12 +63,27 @@
         }
 
         .btn-signup {
-            background: #28a745;
+            margin-left: 150px;
+            background-color: #007bff; /* Bootstrap primary blue color */
+            color: #ffffff !important; /* White text for contrast */
             border: none;
+            padding: 12px 20px;
+            font-size: 1.15rem;
+            width: 150px;
+            height: 50px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
         }
 
-            .btn-signup:hover {
-                background: #218838;
+            .btn-signup:hover, .btn-signup:focus {
+                background-color: #0056b3; /* Darker blue on hover/focus */
+                color: #ffffff !important;
+                outline: none;
+                box-shadow: none;
             }
 
         .input-group-text {
@@ -125,72 +163,6 @@
             </div>
         </div>
 
-        <%--        <section class="vh-100 d-flex align-items-center bg-light">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5 col-md-7">
-                        <div class="card shadow-lg border-0 rounded-4">
-                            <div class="card-body p-5">
-                                <h3 class="text-center mb-4">
-                                    <i class="bi bi-person-circle text-primary"></i>Login
-                                </h3>
-
-                                <!-- Email -->
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-envelope-fill text-primary"></i>Email address
-                                    </label>
-                                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-lg" TextMode="Email" placeholder="Enter your email" required></asp:TextBox>
-                                </div>
-
-                                <!-- Password -->
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-lock-fill text-primary"></i>Password
-                                    </label>
-                                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control form-control-lg" TextMode="Password" placeholder="Enter your password" required></asp:TextBox>
-                                </div>
-
-                                <!-- Remember Me & Forgot Password -->
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <div class="form-check">
-                                        <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input" />
-                                        <label class="form-check-label" for="chkRememberMe">Remember me</label>
-                                    </div>
-                                    <a href="#" class="text-decoration-none">Forgot Password?</a>
-                                </div>
-
-                                <!-- Login Button -->
-                                <div class="d-grid">
-                                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary btn-lg" Text="Login" />
-                                </div>
-
-                                <!-- Divider -->
-                                <div class="text-center my-3">
-                                    <span class="text-muted">or</span>
-                                </div>
-
-                                <!-- Google Login -->
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn"
-                                        style="background-color: #fff; border: 1px solid #dadce0; color: #3c4043; font-weight: 500; padding: 8px 16px; border-radius: 4px; display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/225px-Google_%22G%22_logo.svg.png"
-                                            alt="Google Logo" style="width: 20px; height: 20px;">
-                                        Sign in with Google
-                                    </a>
-                                </div>
-
-                                <!-- Login Link -->
-                                <p class="mt-4 text-center">
-                                    New here? <a href="signup.aspx" class="text-decoration-none">Create an account</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>--%>
-
         <section class="vh-100 d-flex align-items-center bg-light">
             <div class="container">
                 <div class="row justify-content-center">
@@ -239,7 +211,7 @@
 
                                 <!-- Login Button -->
                                 <div class="d-grid">
-                                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary btn-lg" Text="Login" OnClick="btnLogin_Click" />
+                                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-signup text-white" Text="Login" OnClick="btnLogin_Click" />
                                 </div>
 
                                 <!-- Divider -->

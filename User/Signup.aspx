@@ -10,7 +10,26 @@
     <style>
         body {
             background: #f8f9fa;
+            background-image: url("/images/login-bg.png");
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
+
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: inherit;
+                background-image: inherit;
+                background-size: cover;
+                background-position: center;
+                z-index: 0;
+                filter: blur(10px);
+            }
 
         .signup-container {
             max-width: 450px;
@@ -20,17 +39,35 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            /* No scrolling or height limits! */
         }
 
-            .signup-container h3 {
-                font-weight: bold;
-                margin-bottom: 10px;
-            }
+        .text-danger {
+            display: block;
+            min-height: 18px;
+            margin-top: 4px;
+            font-size: 0.875rem;
+            line-height: 1.2;
+        }
 
-            .signup-container p {
-                color: #6c757d;
-                font-size: 14px;
-            }
+        body, html {
+            height: auto;
+            min-height: 100%;
+            overflow-y: auto;
+        }
+
+
+        .signup-container h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .signup-container p {
+            color: #6c757d;
+            font-size: 14px;
+        }
 
         .form-control:focus {
             border-color: #FFC43F;
@@ -38,16 +75,43 @@
         }
 
         .btn-signup {
-            background: #28a745;
+            background-color: #FFC43F !important;
+            margin-left: 115px;
             border: none;
+            padding: 0;
+            font-size: 1.15rem;
+            width: 150px;
+            height: 50px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: none;
+            transition: background 0.2s;
+            display: inline-block;
+            vertical-align: middle;
         }
 
             .btn-signup:hover {
-                background: #218838;
+                background-color: #e9b72f !important;
             }
+
 
         .input-group-text {
             background: #f8f9fa;
+        }
+
+        .signup-container p.text-center.mt-3 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0;
+        }
+
+        .text-danger {
+            display: block;
+            min-height: 18px;
+            margin-top: 4px;
+            font-size: 0.875rem;
+            line-height: 1.2;
         }
     </style>
 </head>
@@ -230,7 +294,7 @@
             </div>
 
             <!-- Button -->
-            <asp:Button ID="btnSignUp" runat="server" CssClass="btn btn-signup w-100 text-white" Text="Sign Up" OnClick="btnSignUp_Click" />
+            <asp:Button ID="btnSignUp" runat="server" CssClass="btn btn-signup text-white" Text="Sign Up" OnClick="btnSignUp_Click" />
 
             <!-- Login Redirect -->
             <p class="text-center mt-3">Already have an account? <a href="login.aspx">Login</a></p>

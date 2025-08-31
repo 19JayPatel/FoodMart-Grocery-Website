@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FoodMart_Pro.Admin
 {
-    public partial class AdminDashboard : System.Web.UI.Page
+    public partial class dashboard : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

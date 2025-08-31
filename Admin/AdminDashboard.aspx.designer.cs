@@ -11,7 +11,7 @@ namespace FoodMart_Pro.Admin
 {
 
 
-    public partial class AdminDashboard
+    public partial class dashboard
     {
     }
 }

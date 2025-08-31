@@ -1,15 +1,22 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="FoodMart_Pro.Admin.Admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="FoodMart_Pro.Admin.admin" %>
 
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head runat="server">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foodmart Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
-
     <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Sidebar */
         .sidebar {
             height: 100vh;
             background-color: #343a40;
@@ -17,56 +24,92 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 16.666%; /* col-md-2 */
+            width: 240px; /* fixed width instead of % */
+            padding-top: 20px;
         }
 
-            .sidebar a {
-                color: white;
+            .sidebar h4 {
+                font-size: 18px;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .sidebar a,
+            .sidebar .text-danger {
+                color: #ddd;
                 display: block;
                 padding: 10px 15px;
                 text-decoration: none;
                 border-radius: 5px;
+                margin: 4px 0;
+                transition: all 0.3s;
             }
 
-                .sidebar a:hover {
+                .sidebar a:hover,
+                .sidebar .text-danger:hover {
                     background-color: #FFC43F;
-                    color: black;
+                    color: black !important;
                 }
 
                 .sidebar a i {
                     margin-right: 8px; /* space between icon and text */
                 }
 
+        /* Main content */
         main {
-            margin-left: 16.666%; /* match sidebar width */
+            margin-left: 240px; /* same as sidebar width */
+            padding: 20px;
         }
+
+        /* Dashboard cards */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease-in-out;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card h5 {
+                font-size: 16px;
+            }
+
+            .card h3 {
+                font-size: 28px;
+            }
     </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Sidebar -->
-                <nav class="col-md-2 col-lg-2 sidebar p-3">
-                    <h4 class="text-center mb-4"><i class="bi bi-shop"></i>
-                        <br />
-                        <br />
-                        Foodmart Admin</h4>
-                    <a href="AdminDashboard.aspx"><i class="bi bi-speedometer2"></i>Dashboard</a>
-                    <a href="ManageProducts.aspx"><i class="bi bi-box"></i>Products</a>
-                    <a href="ManageOrders.aspx"><i class="bi bi-cart"></i>Orders</a>
-                    <a href="ManageCustomers.aspx"><i class="bi bi-people"></i>Customers</a>
-                    <asp:LinkButton ID="btnLogout" runat="server" CssClass="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</asp:LinkButton>
-                </nav>
-
-                <!-- Main Content Placeholder -->
-                <main class="col-md-10 col-lg-10 ms-sm-auto px-4 py-4">
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
-                </main>
-            </div>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Sidebar -->
+                        <nav class="col-md-2 col-lg-2 sidebar p-3">
+                            <h4 class="text-center mb-4"><i class="bi bi-shop"></i>
+                                <br />
+                                <br />
+                                Foodmart Admin</h4>
+                            <a href="AdminDashboard.aspx"><i class="bi bi-speedometer2"></i>Dashboard</a>
+                            <a href="ManageProducts.aspx"><i class="bi bi-box"></i>Products</a>
+                            <a href="ManageOrders.aspx"><i class="bi bi-cart"></i>Orders</a>
+                            <a href="ManageCustomers.aspx"><i class="bi bi-people"></i>Customers</a>
+                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</asp:LinkButton>
+                        </nav>
+                    </div>
+                </div>
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
     </form>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
