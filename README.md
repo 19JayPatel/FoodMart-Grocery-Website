@@ -29,3 +29,20 @@ An **Admin Panel** is provided for managing categories, products, and users.
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/19JayPatel/FoodMart-Grocery-Website.git
+```
+
+## 📸 Screenshots
+
+### Home Page
+![Home Page](https://github.com/19JayPatel/FoodMart-Grocery-Website/blob/master/Screenshot/Home.png)
+### User SignUp Page
+![UserSignup](https://github.com/19JayPatel/FoodMart-Grocery-Website/blob/master/Screenshot/UserSignup.png)
+### User Login Page
+![UserLogin](https://github.com/19JayPatel/FoodMart-Grocery-Website/blob/master/Screenshot/Userlogin.png)
+### Admin Login Page
+![AdminLogin](https://github.com/19JayPatel/FoodMart-Grocery-Website/blob/master/Screenshot/Adminlogin.png)
+### Dashboard Page
+![Dashboard](https://github.com/19JayPatel/FoodMart-Grocery-Website/blob/master/Screenshot/Dashboard.png)
+### ManageProduct Page
+![ManageProduct](https://github.com/19JayPatel/FoodMart-Grocery-Website/blob/master/Screenshot/Manageproduct.png)
+
