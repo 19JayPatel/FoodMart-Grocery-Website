@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Signup.aspx.cs" Inherits="FoodMart_Pro.User.Signup" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Signup.aspx.cs" Inherits="FoodMart_Pro.User.Signup" %>
 
 <!DOCTYPE html>
 
@@ -250,20 +250,28 @@
                 <label class="form-label">Password</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="********"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"
+                        TextMode="Password" placeholder="********"></asp:TextBox>
                 </div>
+
+                <!-- Required Field Validator -->
                 <asp:RequiredFieldValidator ID="rfvPassword" runat="server"
                     ControlToValidate="txtPassword"
                     ErrorMessage="* Password is required"
                     CssClass="text-danger"
-                    Display="Dynamic"></asp:RequiredFieldValidator>
+                    Display="Dynamic">
+                </asp:RequiredFieldValidator>
+
+                <!-- Regular Expression Validator -->
                 <asp:RegularExpressionValidator ID="revPassword" runat="server"
                     ControlToValidate="txtPassword"
-                    ErrorMessage="* Must be at least 6 characters"
-                    ValidationExpression="^.{6,}$"
+                    ErrorMessage="* Password must be 6-8 characters and include a number & special character"
+                    ValidationExpression="^(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{6,8}$"
                     CssClass="text-danger"
-                    Display="Dynamic"></asp:RegularExpressionValidator>
+                    Display="Dynamic">
+                </asp:RegularExpressionValidator>
             </div>
+
 
             <!-- Confirm Password -->
             <div class="mb-3">
