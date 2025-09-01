@@ -1,0 +1,89 @@
+body {
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.product-container {
+    margin-top: 50px;
+}
+
+.thumb-img {
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.thumb-img:hover {
+    border-color: #FFC43F;
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 32px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.thumbs-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.main-img-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+    min-height: 350px;
+}
+
+.main-img {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    max-height: 350px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.price-tag {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.discount {
+    color: green;
+    font-weight: 600;
+}
+
+.highlight-badge {
+    background-color: #e9f9ee;
+    color: #2e7d32;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 15px;
+}
