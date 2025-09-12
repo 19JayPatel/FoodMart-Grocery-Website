@@ -64,6 +64,10 @@ CREATE TABLE [dbo].[User_tbl] (
     [Password] NVARCHAR (MAX) NOT NULL
 );
 
+-- Insert default admin credentials for Foodmart
+INSERT INTO [dbo].[Admin_tbl] ([Username], [Password])
+VALUES ('foodmart', 'foodmart123');
+
 ```
 ---
 ## 📸 Screenshots
