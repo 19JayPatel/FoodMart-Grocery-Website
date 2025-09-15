@@ -101,6 +101,19 @@
     <main>
         <div class="container">
             <div class="card-custom">
+
+                <!-- Add Category Form -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-8">
+                        <label for="txtCategoryName" class="form-label">New Category</label>
+                        <asp:TextBox ID="txtCategoryName" runat="server" CssClass="form-control" Placeholder="Enter category name" />
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <asp:Button ID="btnAddCategory" runat="server" Text="Add Category" CssClass="btn btn-success w-50 h-30 text-center" OnClick="btnAddCategory_Click" />
+                    </div>
+                </div>
+
+
                 <h2><i class="bi bi-box-seam"></i>&nbsp;Manage Products</h2>
 
                 <!-- Add Product Form -->

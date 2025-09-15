@@ -37,8 +37,8 @@ namespace FoodMart_Pro.Admin
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 ddlCategory.Items.Add(new ListItem(
-                    ds.Tables[0].Rows[i]["CategoryName"].ToString(),   // Text
-                    ds.Tables[0].Rows[i]["CategoryID"].ToString()     // Value
+                    ds.Tables[0].Rows[i]["CategoryName"].ToString(),
+                    ds.Tables[0].Rows[i]["CategoryID"].ToString()
                 ));
             }
         }
@@ -48,6 +48,7 @@ namespace FoodMart_Pro.Admin
             txtProductName.Text = "";
             txtWeight.Text = "";
             txtPrice.Text = "";
+            ddlCategory.SelectedIndex = 0;
         }
 
         void imgupload()
@@ -139,17 +140,28 @@ namespace FoodMart_Pro.Admin
 
         }
 
+        protected void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            getcon();
+            conn.Open();
+
+            cmd = new SqlCommand("INSERT INTO Categories(CategoryName) VALUES ('" + txtCategoryName.Text + "')", conn);
+            cmd.ExecuteNonQuery();
+            txtCategoryName.Text = "";
+            fillcategory();
+        }
+
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int id = Convert.ToInt32(e.CommandArgument.ToString());
 
-            if (e.CommandName == "cmd_edit")   // ✅ match your markup
+            if (e.CommandName == "cmd_edit")
             {
                 ViewState["id"] = id;
                 btnAddProduct.Text = "Update";
-                select();                      // fills txtboxes + dropdown
+                select();
             }
-            else if (e.CommandName == "cmd_del")  // ✅ delete only on this command
+            else if (e.CommandName == "cmd_del")
             {
                 getcon();
                 conn.Open();
