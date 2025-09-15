@@ -29,3 +29,49 @@ An **Admin Panel** is provided for managing categories, products, and users.
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/19JayPatel/FoodMart-Grocery-Website.git
+```
+---
+## 🛢 IMP SQL All Query
+```bash
+CREATE DATABASE FoodMart;
+
+CREATE TABLE [dbo].[Admin_tbl] (
+    [AdminID]  INT           IDENTITY (1, 1) NOT NULL,
+    [Username] VARCHAR (MAX) NOT NULL,
+    [Password] VARCHAR (MAX) NOT NULL
+);
+
+CREATE TABLE [dbo].[Categories] (
+    [CategoryID]   INT            IDENTITY (1, 1) NOT NULL,
+    [CategoryName] NVARCHAR (MAX) NOT NULL
+);
+
+CREATE TABLE [dbo].[Products_tbl] (
+    [ProductID]    INT            IDENTITY (1, 1) NOT NULL,
+    [ProductName]  NVARCHAR (MAX) NOT NULL,
+    [Weight]       NVARCHAR (MAX) NOT NULL,
+    [Price]        NVARCHAR (MAX) NOT NULL,
+    [CategoryID]   INT            NOT NULL,
+    [CategoryName] NVARCHAR (MAX) NOT NULL,
+    [ProductImage] NVARCHAR (MAX) NOT NULL
+);
+
+CREATE TABLE [dbo].[User_tbl] (
+    [Id]       INT            IDENTITY (1, 1) NOT NULL,
+    [FullName] NVARCHAR (MAX) NOT NULL,
+    [Email]    NVARCHAR (MAX) NOT NULL,
+    [PNumber]  NVARCHAR (MAX) NOT NULL,
+    [Password] NVARCHAR (MAX) NOT NULL
+);
+
+-- Insert default admin credentials for Foodmart
+INSERT INTO [dbo].[Admin_tbl] ([Username], [Password])
+VALUES ('foodmart', 'foodmart123');
+
+```
+---
+## 📸 Screenshots
+
+### Home Page
+![Home Page](https://github.com/19JayPatel/FoodMart-Grocery-Website/blob/master/Screenshot/Home.png)
+
