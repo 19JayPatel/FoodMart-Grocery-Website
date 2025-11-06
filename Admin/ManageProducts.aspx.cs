@@ -48,8 +48,6 @@ namespace FoodMart_Pro.Admin
             txtProductName.Text = "";
             txtWeight.Text = "";
             txtPrice.Text = "";
-            txtAboutProduct.Text = "";
-            ddlCategory.SelectedIndex = 0;
         }
 
         void imgupload()
@@ -148,15 +146,6 @@ namespace FoodMart_Pro.Admin
 
         }
 
-        protected void btnAddCategory_Click(object sender, EventArgs e)
-        {
-            getcon();
-            conn.Open();
-
-            cmd = new SqlCommand("INSERT INTO Categories(CategoryName) VALUES ('" + txtCategoryName.Text + "')", conn);
-            cmd.ExecuteNonQuery();
-            txtCategoryName.Text = "";
-            fillcategory();
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
