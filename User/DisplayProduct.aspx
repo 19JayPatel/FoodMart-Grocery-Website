@@ -1,9 +1,10 @@
-﻿<%@ Page Title="Foodmart - Home Page" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="FoodMart_Pro.User.index" %>
+﻿<%@ Page Title="FoodMart - Product Page" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeBehind="DisplayProduct.aspx.cs" Inherits="FoodMart_Pro.User.DisplayProduct" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 </asp:Content>
 <asp:Content ID="Content5" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <defs>
             <symbol xmlns="http://www.w3.org/2000/svg" id="link" viewBox="0 0 24 24">
@@ -89,7 +90,6 @@
                         placeholder="What are you looking for?" aria-label="What are you looking for?">
                     <button class="btn btn-dark rounded-end rounded-0" type="submit">
                         Search
-                   
                     </button>
                 </form>
             </div>
@@ -105,7 +105,6 @@
                         <a href="index.aspx">
                             <img src="images/logo.png" alt="logo" class="img-fluid">
                         </a>&nbsp;
-                   
                     </div>
                 </div>
                 <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
@@ -171,12 +170,6 @@
                                 </button>
                             </div>
                             <div class="offcanvas-body">
-                                <%--<select class="filter-categories border-0 mb-0 me-5" style="outline: none;">
-                                    <option>Shop by Departments</option>
-                                    <option>Groceries</option>
-                                    <option>Drinks</option>
-                                    <option>Chocolates</option>
-                                </select>--%>
                                 <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
                                     <li class="nav-item active"><a href="index.aspx" class="nav-link underline-hover">Home</a> </li>
                                     <li class="nav-item dropdown"><a href="DisplayProduct.aspx" class="nav-link">Products</a> </li>
@@ -186,6 +179,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <div class="d-flex align-items-center justify-content-end" style="margin-left: 700px;">
                             <!-- Avatar -->
                             <asp:Label ID="lblAvatar" runat="server" Style="width: 40px; height: 40px; border-radius: 50%; background-color: #00695c; color: white; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; text-transform: uppercase;"></asp:Label>
@@ -195,116 +189,24 @@
                                 OnClick="btnLogout_Click">Logout</asp:LinkButton>
                         </div>
                 </div>
-
             </div>
         </div>
     </header>
     <!--Navbar End-->
 </asp:Content>
 <asp:Content ID="Content6" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
-    <!--Slider Start& Image Section bar Start-->
-    <section class="py-3"
-        style="background-image: url('images/background-pattern.jpg'); background-repeat: no-repeat; background-size: cover;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
+    <!-- Hero Banner Section Start -->
+    <section class="position-relative text-center">
+        <img src="images/banner-image-3.png" class="img-fluid w-100" alt="Product Banner Image"
+            style="max-height: 400px; object-fit: cover;">
 
-                    <div class="banner-blocks">
-
-                        <div class="banner-ad large bg-info block-1">
-
-                            <div class="swiper main-swiper">
-                                <div class="swiper-wrapper">
-                                    <!--Slider 1-->
-                                    <div class="swiper-slide">
-                                        <div class="row banner-content p-5">
-                                            <div class="content-wrapper col-md-7">
-                                                <div class="categories my-3">100% natural</div>
-                                                <h3 class="display-4">Fresh Smoothie & Summer Juice</h3>
-                                                <p>
-                                                    Beat the heat with our refreshing smoothies made from handpicked fruits and no added sugar.
-                          Perfect for every summer day!
-                                               
-                                                </p>
-                                                <a href="#"
-                                                    class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">Shop Now</a>
-                                            </div>
-                                            <div class="img-wrapper col-md-5">
-                                                <img src="images/product-thumb-1.png" class="img-fluid">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Slider 2-->
-                                    <div class="swiper-slide">
-                                        <div class="row banner-content p-5">
-                                            <div class="content-wrapper col-md-7">
-                                                <div class="categories mb-3 pb-3">100% natural</div>
-                                                <h3 class="banner-title">Heinz Tomato Ketchup</h3>
-                                                <p>
-                                                    Enjoy the classic taste of Heinz Tomato Ketchup – made with sun-ripened tomatoes and a
-                          perfect blend of spices. A family favorite for generations!
-                                               
-                                                </p>
-                                                <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Shop
-                          Collection</a>
-                                            </div>
-                                            <div class="img-wrapper col-md-5">
-                                                <img src="images/product-thumb-2.png" class="img-fluid">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-pagination"></div>
-
-                            </div>
-                        </div>
-
-                        <!--Image 1-->
-                        <div class="banner-ad bg-success-subtle block-2"
-                            style="background: url('images/ad-image-1.png') no-repeat; background-position: right bottom">
-                            <div class="row banner-content p-5">
-
-                                <div class="content-wrapper col-md-7">
-                                    <div class="categories sale mb-3 pb-3">20% off</div>
-                                    <h3 class="banner-title">Fruits & Vegetables</h3>
-                                    <a href="#" class="d-flex align-items-center nav-link">Shop Collection
-                                       
-                                        <svg width="24" height="24">
-                                            <use xlink:href="#arrow-right"></use>
-                                        </svg></a>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!--Image 2-->
-                        <div class="banner-ad bg-danger block-3"
-                            style="background: url('images/ad-image-2.png') no-repeat; background-position: right bottom">
-                            <div class="row banner-content p-5">
-
-                                <div class="content-wrapper col-md-7">
-                                    <div class="categories sale mb-3 pb-3">30% off</div>
-                                    <h3 class="item-title">Baked Products</h3>
-                                    <a href="#" class="d-flex align-items-center nav-link">Shop Collection
-                                       
-                                        <svg width="24" height="24">
-                                            <use xlink:href="#arrow-right"></use>
-                                        </svg></a>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- / Banner Blocks -->
-
-                </div>
-            </div>
+        <!-- Text on Image -->
+        <div class="position-absolute top-50 start-50 translate-middle text-white">
+            <h2 class="display-5 fw-bold" style="color: #FFC43F;">Delight in Every Bite</h2>
+            <p class="fs-5" style="color: #f1d79c;">"" Made with love, filled with flavor. ""</p>
         </div>
     </section>
-    <!--Slider & Image Section bar End-->
+    <!-- Hero Banner Section End -->
 
     <!--Category Section Slider Start-->
     <section class="py-5 overflow-hidden">
@@ -391,129 +293,6 @@
     </section>
     <!--Category Section Slider End-->
 
-    <!--Newly Arrived Brands Section Start-->
-    <section class="py-5 overflow-hidden">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="section-header d-flex flex-wrap justify-content-between mb-5">
-                        <h2 class="section-title">Newly Arrived Brands</h2>
-                        <div class="d-flex align-items-center">
-                            <a href="#" class="btn-link text-decoration-none">View All Categories →</a>
-                            <div class="swiper-buttons">
-                                <button class="swiper-prev brand-carousel-prev btn btn-yellow">❮</button>
-                                <button class="swiper-next brand-carousel-next btn btn-yellow">❯</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="brand-carousel swiper">
-                        <div class="swiper-wrapper">
-
-                            <!-- Slide 2 -->
-                            <div class="swiper-slide">
-                                <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="images/nestle-milk.png" class="img-fluid rounded" alt="Nestlé Milk">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body py-0">
-                                                <p class="text-muted mb-0">Nestlé</p>
-                                                <h5 class="card-title">Pure & Nutritious Milk from Trusted Farms</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 3 -->
-                            <div class="swiper-slide">
-                                <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="images/lays-chips.jpg" class="img-fluid rounded" alt="Lays Chips">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body py-0">
-                                                <p class="text-muted mb-0">Lay's</p>
-                                                <h5 class="card-title">Crunchy Classic Potato Chips – Salted</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 4 -->
-                            <div class="swiper-slide">
-                                <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="images/amul-butter.jpg" class="img-fluid rounded" alt="Amul Butter">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body py-0">
-                                                <p class="text-muted mb-0">Amul</p>
-                                                <h5 class="card-title">Utterly Butterly Delicious Amul Butter</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 5 -->
-                            <div class="swiper-slide">
-                                <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="images/redbull-energy.png" class="img-fluid rounded" alt="Red Bull Energy Drink">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body py-0">
-                                                <p class="text-muted mb-0">Red Bull</p>
-                                                <h5 class="card-title">Red Bull Energy Drink – Gives You Wings</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 6 -->
-                            <div class="swiper-slide">
-                                <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="images/dettol-soap.jpg" class="img-fluid rounded" alt="Dettol Soap">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body py-0">
-                                                <p class="text-muted mb-0">Dettol</p>
-                                                <h5 class="card-title">Trusted Germ Protection – Dettol Soap</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!--Newly Arrived Brands Section End-->
-
-    <!--Trending Products Section Start-->
-    <h2 class="section-title" style="margin-left: 22px;">Trending Products</h2>
     <!--Product Card Section-->
     <center>
         <asp:DataList ID="dlProducts" runat="server" RepeatColumns="4" CellPadding="15" OnItemCommand="dlProducts_ItemCommand">
@@ -569,321 +348,17 @@
             </ItemTemplate>
         </asp:DataList>
     </center>
-    <!--Trending Products Section End-->
 
-    <!--Discount Section Start-->
-    <section class="py-5">
-        <div class="container-fluid">
-            <div class="row">
+    <center style="margin-top: 10px;">
+        <asp:LinkButton ID="lnkPrev" runat="server" OnClick="lnkPrev_Click"
+            Font-Bold="true" ForeColor="#0d6efd">Previous</asp:LinkButton>
+        &nbsp;&nbsp;
+    <asp:LinkButton ID="lnkNext" runat="server" OnClick="lnkNext_Click"
+        Font-Bold="true" ForeColor="#0d6efd">Next</asp:LinkButton>
+    </center>
 
-                <div class="col-md-6">
-                    <div class="banner-ad bg-danger mb-3"
-                        style="background: url('images/ad-image-3.png'); background-repeat: no-repeat; background-position: right bottom;">
-                        <div class="banner-content p-5">
 
-                            <div class="categories text-primary fs-3 fw-bold">Upto 25% Off</div>
-                            <h3 class="banner-title">Luxa Dark Chocolate</h3>
-                            <p>
-                                Indulge in the rich and intense flavor of Luxa Dark
-                               
-                                <br>
-                                Chocolate, made with 70% pure cocoa and
-                               
-                                <br>
-                                crafted for
-                true chocolate lovers. Smooth,<br>
-                                bold, and perfectly bittersweet.
-                           
-                            </p>
-                            <br>
-                            <a href="#" class="btn btn-dark text-uppercase">Show Now</a>
 
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="banner-ad bg-info"
-                        style="background: url('images/ad-image-4.png'); background-repeat: no-repeat; background-position: right bottom;">
-                        <div class="banner-content p-5">
-
-                            <div class="categories text-primary fs-3 fw-bold">Upto 25% Off</div>
-                            <h3 class="banner-title">Creamy Muffins</h3>
-                            <p>
-                                Soft, moist, and filled with a rich vanilla cream
-                               
-                                <br>
-                                center — our Creamy Muffins are a
-                               
-                                <br>
-                                delicious
-                treat for
-                breakfast, tea time, or
-                               
-                                <br>
-                                dessert. Baked fresh daily with love and
-                               
-                                <br>
-                                quality ingredients.
-                           
-                            </p>
-                            <a href="#" class="btn btn-dark text-uppercase">Show Now</a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--Discount Section End-->
-
-    <!--Best selling products Section Start-->
-    <section class="py-5 overflow-hidden">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="section-header d-flex flex-wrap justify-content-between my-5">
-
-                        <h2 class="section-title">Best selling products</h2>
-
-                        <div class="d-flex align-items-center">
-                            <a href="#" class="btn-link text-decoration-none">View All Categories →</a>
-                            <div class="swiper-buttons">
-                                <button class="swiper-prev products-carousel-prev btn btn-primary">❮</button>
-                                <button class="swiper-next products-carousel-next btn btn-primary">❯</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="products-carousel swiper">
-                        <div class="swiper-wrapper">
-
-                            <div class="product-item swiper-slide">
-                                <span class="badge bg-success position-absolute m-3">-15%</span>
-                                <a href="#" class="btn-wishlist">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg></a>
-                                <figure>
-                                    <a href="index.html" title="Product Title">
-                                        <img src="images/thumb-tomatoes.png" class="tab-image">
-                                    </a>
-                                </figure>
-                                <br>
-                                <h3>Fresh Tomatoes</h3>
-                                <span class="qty">1 KG</span><span class="rating"><svg width="24" height="24" class="text-primary">
-                                    <use xlink:href="#star-solid"></use>
-                                </svg>
-                                    4.5</span>
-                                <span class="price">₹49</span>
-                            </div>
-
-                            <div class="product-item swiper-slide">
-                                <span class="badge bg-success position-absolute m-3">-15%</span>
-                                <a href="#" class="btn-wishlist">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg></a>
-                                <figure>
-                                    <a href="index.html" title="Product Title">
-                                        <img src="images/thumb-tomatoketchup.png" class="tab-image">
-                                    </a>
-                                </figure>
-                                <br>
-                                <h3>Tomato Ketchup</h3>
-                                <span class="qty">1 Pack</span><span class="rating"><svg width="24" height="24" class="text-primary">
-                                    <use xlink:href="#star-solid"></use>
-                                </svg>
-                                    4.5</span>
-                                <span class="price">₹149</span>
-                            </div>
-
-                            <div class="product-item swiper-slide">
-                                <span class="badge bg-success position-absolute m-3">-15%</span>
-                                <a href="#" class="btn-wishlist">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg></a>
-                                <figure>
-                                    <a href="index.html" title="Product Title">
-                                        <img src="images/FreshCabbage.png" class="tab-image">
-                                    </a>
-                                </figure>
-                                <br>
-                                <h3>Fresh Cabbage</h3>
-                                <span class="qty">1 Piece (~700g)</span><span class="rating"><svg width="24" height="24"
-                                    class="text-primary">
-                                    <use xlink:href="#star-solid"></use>
-                                </svg>
-                                    4.5</span>
-                                <span class="price">₹99</span>
-                            </div>
-
-                            <div class="product-item swiper-slide">
-                                <span class="badge bg-success position-absolute m-3">-15%</span>
-                                <a href="#" class="btn-wishlist">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg></a>
-                                <figure>
-                                    <a href="index.html" title="Product Title">
-                                        <img src="images/RedOnions.png" class="tab-image">
-                                    </a>
-                                </figure>
-                                <br>
-                                <h3>Red Onions</h3>
-                                <span class="qty">1 KG</span><span class="rating"><svg width="24" height="24" class="text-primary">
-                                    <use xlink:href="#star-solid"></use>
-                                </svg>
-                                    4.5</span>
-                                <span class="price">₹120</span>
-                            </div>
-                            <div class="product-item swiper-slide">
-                                <a href="#" class="btn-wishlist">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg></a>
-                                <figure>
-                                    <a href="index.html" title="Product Title">
-                                        <img src="images/KissanMixedfruitJam.png" class="tab-image">
-                                    </a>
-                                </figure>
-                                &nbsp;
-               
-                                <h3>Kissan Fruit Jam </h3>
-                                <span class="qty">500g Jar</span><span class="rating"><svg width="24" height="24" class="text-primary">
-                                    <use xlink:href="#star-solid"></use>
-                                </svg>
-                                    4.5</span>
-                                <span class="price">₹89</span>
-                            </div>
-
-                            <div class="product-item swiper-slide">
-                                <a href="#" class="btn-wishlist">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg></a>
-                                <figure>
-                                    <a href="index.html" title="Product Title">
-                                        <img src="images/Fortune`SunflowerOil.jfif" class="tab-image">
-                                    </a>
-                                </figure>
-                                &nbsp;
-               
-                                <h3>Sunflower Oil</h3>
-                                <span class="qty">1.5Kg</span><span class="rating"><svg width="24" height="24" class="text-primary">
-                                    <use xlink:href="#star-solid"></use>
-                                </svg>
-                                    4.5</span>
-                                <span class="price">₹118</span>
-                            </div>
-
-                            <div class="product-item swiper-slide">
-                                <a href="#" class="btn-wishlist">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg></a>
-                                <figure>
-                                    <a href="index.html" title="Product Title">
-                                        <img src="images/TataSaltIodized.jfif" class="tab-image">
-                                    </a>
-                                    <br>
-                                    &nbsp;
-                  &nbsp;
-                               
-                                </figure>
-                                <h3>Tata Salt Iodized</h3>
-                                <span class="qty">1 KG Pack</span><span class="rating"><svg width="24" height="24" class="text-primary">
-                                    <use xlink:href="#star-solid"></use>
-                                </svg>
-                                    4.5</span>
-                                <span class="price">₹39</span>
-                            </div>
-
-                            <div class="product-item swiper-slide">
-                                <a href="#" class="btn-wishlist">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg></a>
-                                <figure>
-                                    <a href="index.html" title="Product Title">
-                                        <img src="images/Maggi2MinuteNoodles.png" class="tab-image">
-                                    </a>
-                                </figure>
-                                <h3>Maggi 2-Minute Noodles</h3>
-                                <span class="qty">Pack of 6</span><span class="rating"><svg width="24" height="24" class="text-primary">
-                                    <use xlink:href="#star-solid"></use>
-                                </svg>
-                                    4.5</span>
-                                <span class="price">₹59</span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- / products-carousel -->
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Best selling products Section End-->
-
-    <!--Newsletter Section Start-->
-    <section class="py-5">
-        <div class="container-fluid">
-
-            <div class="bg-secondary py-5 my-5 rounded-5"
-                style="background: url('images/bg-leaves-img-pattern.png') no-repeat;">
-                <div class="container my-5">
-                    <div class="row">
-                        <div class="col-md-6 p-5">
-                            <div class="section-header">
-                                <h2 class="section-title display-4">Get <span class="text-primary">25% Discount</span> on your first
-                  purchase</h2>
-                            </div>
-                            <p>
-                                Enjoy fresh, quality products delivered to your doorstep. Sign up now and save big on your first order
-                — because you deserve more for less!
-                           
-                            </p>
-                        </div>
-                        <div class="col-md-6 p-5">
-
-                            <div class="mb-3">
-                                <asp:Label ID="lblName" runat="server" AssociatedControlID="txtName" CssClass="form-label" Text="Name"></asp:Label>
-                                <asp:TextBox ID="txtName" runat="server" CssClass="form-control form-control-lg" Placeholder="Name"></asp:TextBox>
-                            </div>
-                            <div class="mb-3">
-                                <asp:Label ID="lblEmail" runat="server" AssociatedControlID="txtEmail" CssClass="form-label" Text="Email"></asp:Label>
-                                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-lg" TextMode="Email" Placeholder="abc@mail.com"></asp:TextBox>
-                            </div>
-                            <div class="form-check form-check-inline mb-3">
-                                <asp:CheckBox ID="chkSubscribe" runat="server" CssClass="form-check-input" />
-                                <label class="form-check-label" for="chkSubscribe">
-                                    Subscribe to the newsletter</label>
-                            </div>
-                            <div class="d-grid gap-2">
-                                <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-dark btn-lg" OnClick="btnSubmit_Click" />
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!--Newsletter Section End-->
 </asp:Content>
 <asp:Content ID="Content7" runat="server" ContentPlaceHolderID="ContentPlaceHolder3">
     <!--App Play Sections start-->
@@ -901,7 +376,6 @@
                                 Discover the easiest way to shop your daily groceries. Enjoy seamless browsing, quick checkout, and
                 doorstep delivery — all through the Foodmart App. Experience convenience, speed, and quality right at
                 your fingertips.
-                           
                             </p>
                             <div class="d-flex gap-2 flex-wrap">
                                 <img src="images/app-store.jpg" alt="app-store">
@@ -934,7 +408,6 @@
                                     <p class="card-text">
                                         On all orders over ₹499. Fast and secure doorstep delivery
                     across India.
-                                   
                                     </p>
                                 </div>
                             </div>
@@ -956,7 +429,6 @@
                                     <p class="card-text">
                                         Your transactions are protected with 256-bit encryption for
                     complete safety.
-                                   
                                     </p>
                                 </div>
                             </div>
@@ -978,7 +450,6 @@
                                     <p class="card-text">
                                         We ensure the best quality with trusted brands and fresh
                     handpicked items.
-                                   
                                     </p>
                                 </div>
                             </div>
@@ -1000,7 +471,6 @@
                                     <p class="card-text">
                                         Save more with exclusive deals and everyday discounts on your
                     favorites.
-                                   
                                     </p>
                                 </div>
                             </div>
@@ -1022,7 +492,6 @@
                                     <p class="card-text">
                                         Check back every day for fresh deals on grocery, bakery, and
                     beverages.
-                                   
                                     </p>
                                 </div>
                             </div>
@@ -1121,14 +590,12 @@
                         <h5 class="widget-title">Subscribe Us</h5>
                         <p>
                             Subscribe to our newsletter to get updates about our grand offers.
-                       
                         </p>
                         <form class="d-flex mt-3 gap-0" role="newsletter">
                             <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address"
                                 aria-label="Email Address">
                             <button class="btn btn-dark rounded-end rounded-0" type="submit">
                                 Subscribe
-                           
                             </button>
                         </form>
                     </div>
@@ -1140,7 +607,6 @@
 
     <div class="text-center border-top pt-3 mt-4 small" style="font-size: 15px;">
         © 2025 <strong>FoodMart</strong>. All Rights Reserved.
-   
     </div>
 </asp:Content>
 

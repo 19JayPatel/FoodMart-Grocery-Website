@@ -78,6 +78,7 @@
     </Content>
     <Content Include="css\ajax-loader.gif" />
     <Content Include="css\normalize.css" />
+    <Content Include="css\productcard.css" />
     <Content Include="css\productdetails.css" />
     <Content Include="css\vendor.css" />
     <Content Include="Screenshot\Adminlogin.png" />
@@ -218,8 +219,14 @@
     <Content Include="js\productdetails.js" />
     <Content Include="js\script.js" />
     <Content Include="style.css" />
+    <Content Include="User\About.aspx" />
+    <Content Include="User\Cart.aspx" />
+    <Content Include="User\Checkout.aspx" />
+    <Content Include="User\Contact.aspx" />
+    <Content Include="User\DisplayProduct.aspx" />
     <Content Include="User\index.aspx" />
     <Content Include="User\login.aspx" />
+    <Content Include="User\ProductDetails.aspx" />
     <Content Include="User\Signup.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -253,6 +260,41 @@
       <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\DisplayProduct.aspx.cs">
+      <DependentUpon>DisplayProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\DisplayProduct.aspx.designer.cs">
+      <DependentUpon>DisplayProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -266,6 +308,13 @@
     </Compile>
     <Compile Include="User\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>

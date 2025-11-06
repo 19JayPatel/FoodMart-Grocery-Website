@@ -101,6 +101,19 @@
     <main>
         <div class="container">
             <div class="card-custom">
+
+                <!-- Add Category Form -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-8">
+                        <label for="txtCategoryName" class="form-label">New Category</label>
+                        <asp:TextBox ID="txtCategoryName" runat="server" CssClass="form-control" Placeholder="Enter category name" />
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <asp:Button ID="btnAddCategory" runat="server" Text="Add Category" CssClass="btn btn-success w-50 h-30 text-center" OnClick="btnAddCategory_Click" />
+                    </div>
+                </div>
+
+
                 <h2><i class="bi bi-box-seam"></i>&nbsp;Manage Products</h2>
 
                 <!-- Add Product Form -->
@@ -123,6 +136,13 @@
                     <div class="col-md-6">
                         <label for="ddlCategory" class="form-label">Category</label>
                         <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-control"></asp:DropDownList>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="txtAboutProduct" class="form-label">About Product</label>
+                        <asp:TextBox ID="txtAboutProduct" runat="server" CssClass="form-control"
+                            TextMode="MultiLine" Rows="4"
+                            Placeholder="Enter product description or details"></asp:TextBox>
                     </div>
 
                     <div class="col-md-12">
