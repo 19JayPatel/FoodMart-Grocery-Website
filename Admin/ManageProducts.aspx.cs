@@ -48,6 +48,8 @@ namespace FoodMart_Pro.Admin
             txtProductName.Text = "";
             txtWeight.Text = "";
             txtPrice.Text = "";
+            txtAboutProduct.Text = "";
+            ddlCategory.SelectedIndex = 0;
         }
 
         void imgupload()
@@ -88,7 +90,7 @@ namespace FoodMart_Pro.Admin
             getcon();
             fillgrid();
 
-            if (Session["User"] == null)
+            if (Session["AdminUser"] == null)
             {
                 Response.Redirect("adminlogin.aspx");
             }
@@ -97,6 +99,17 @@ namespace FoodMart_Pro.Admin
             {
                 fillcategory();
             }
+        }
+
+        protected void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            getcon();
+            conn.Open();
+
+            cmd = new SqlCommand("INSERT INTO Categories(CategoryName) VALUES ('" + txtCategoryName.Text + "')", conn);
+            cmd.ExecuteNonQuery();
+            txtCategoryName.Text = "";
+            fillcategory();
         }
 
         protected void btnAddProduct_Click(object sender, EventArgs e)
@@ -129,7 +142,7 @@ namespace FoodMart_Pro.Admin
                 getcon();
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("UPDATE Products_tbl SET ProductName='" + txtProductName.Text + "', Weight='" + txtWeight.Text + "', Price='" + txtPrice.Text + "', About='" + txtAboutProduct.Text + "' WHERE ProductID='" + ViewState["id"] + "'", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE Products_tbl SET ProductName='" + txtProductName.Text + "', Weight='" + txtWeight.Text + "', Price='" + txtPrice.Text + "',CategoryName='" + ddlCategory.SelectedItem.Text + "', About='" + txtAboutProduct.Text + "' WHERE ProductID='" + ViewState["id"] + "'", conn);
 
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -141,12 +154,8 @@ namespace FoodMart_Pro.Admin
                 clear();
                 btnAddProduct.Text = "Add Product";
             }
-
-
-
         }
 
-        }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {

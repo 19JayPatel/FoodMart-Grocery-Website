@@ -197,6 +197,8 @@
         </div>
     </header>
     <!--Navbar End-->
+    </header>
+    </header>
 </asp:Content>
 <asp:Content ID="Content6" runat="server" ContentPlaceHolderID="ContentPlaceHolder2">
     <!-- About Us Section -->
@@ -442,7 +444,7 @@
                                     Subscribe to the newsletter</label>
                             </div>
                             <div class="d-grid gap-2">
-                                <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-dark btn-lg" />
+                                <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-dark btn-lg" OnClick="btnSubmit_Click" />
                             </div>
 
                         </div>

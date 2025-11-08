@@ -38,7 +38,7 @@ namespace FoodMart_Pro.Admin
 
                 if (i > 0)
                 {
-                    Session["User"] = txtUsername.Text;
+                    Session["AdminUser"] = txtUsername.Text;
                     Response.Redirect("AdminDashboard.aspx");
                 }
                 else
