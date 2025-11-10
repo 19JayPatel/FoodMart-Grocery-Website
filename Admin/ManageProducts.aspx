@@ -152,12 +152,13 @@
 
                     <div class="col-md-12 text-center mt-3">
                         <asp:Button ID="btnAddProduct" runat="server" Text="Add Product" CssClass="btn btn-primary" OnClick="btnAddProduct_Click" />
+                        <asp:Button ID="btnReport" runat="server" Text="Report" CssClass="btn btn-primary" OnClick="btnReport_Click" />
                     </div>
                 </div>
 
                 <asp:Label ID="lblMsg" runat="server" CssClass="mt-3 d-block text-center fw-bold" ForeColor="Green"></asp:Label>
 
-                <!-- Product Grid -->
+                <!-- Product Grid Start-->
                 <div class="grid-container mt-4">
                     <asp:GridView ID="GridView1"
                         runat="server"
@@ -227,6 +228,8 @@
                         </Columns>
                     </asp:GridView>
                 </div>
+                <!--Product Grid End-->
+
             </div>
         </div>
     </main>

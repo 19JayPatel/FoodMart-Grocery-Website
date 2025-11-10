@@ -178,6 +178,35 @@ namespace FoodMart_Pro.Admin
             }
         }
 
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            getcon();
+            da = new SqlDataAdapter("SELECT ProductID, ProductName, Weight, Price, CategoryName, About, ProductImage FROM Products_tbl", conn);
+            ds = new DataSet();
+            da.Fill(ds, "Products_tbl");
+
+            // Generate XML file
+            string xmlPath = Server.MapPath("~/Reports/ProductsReport.xml");
+            ds.WriteXml(xmlPath, XmlWriteMode.WriteSchema);
+
+            // Load Crystal Report
+            CrystalDecisions.CrystalReports.Engine.ReportDocument rptDoc = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
+            string rptPath = Server.MapPath("~/Reports/ProductsReport.rpt");
+            rptDoc.Load(rptPath);
+
+            // Bind data
+            rptDoc.SetDataSource(ds.Tables["Products_tbl"]);
+
+            // Export to PDF
+            string pdfPath = Server.MapPath("~/Reports/ProductsReport.pdf");
+            rptDoc.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, pdfPath);
+
+            // Force download
+            Response.ContentType = "application/pdf";
+            Response.AppendHeader("Content-Disposition", "attachment; filename=ProductsReport.pdf");
+            Response.TransmitFile(pdfPath);
+            Response.End();
+        }
 
     }
 }

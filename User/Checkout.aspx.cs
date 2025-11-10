@@ -2,8 +2,13 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Security.Cryptography;
 using System.Web.UI.WebControls;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+
+
 
 namespace FoodMart_Pro.User
 {
@@ -14,6 +19,8 @@ namespace FoodMart_Pro.User
         SqlCommand cmd;
         SqlDataAdapter da;
         DataSet ds;
+        private ReportDocument cr = new ReportDocument();
+        static string Crypath = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -75,6 +82,34 @@ namespace FoodMart_Pro.User
             }
         }
 
+        void generateCrystalReport(int orderId)
+        {
+            getcon();
+
+            // 1️. Fetch order details
+            da = new SqlDataAdapter("SELECT * FROM Order_tbl WHERE Order_Id='" + orderId + "'", conn);
+            ds = new DataSet();
+            da.Fill(ds, "Order_tbl");
+
+            // 2️. Fetch order items
+            da = new SqlDataAdapter("SELECT * FROM OrderItems_tbl WHERE Order_Id='" + orderId + "'", conn);
+            da.Fill(ds, "OrderItems_tbl");
+
+            // 3️. Load report
+            Crypath = Server.MapPath("~/Reports/OrderReport.rpt");
+            cr.Load(Crypath);
+            cr.SetDataSource(ds);
+
+            // 4️. Export directly to PDF and send to browser
+            Response.ClearContent();
+            Response.ClearHeaders();
+            cr.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "Order_" + orderId + "_Bill");
+
+            cr.Close();
+            cr.Dispose();
+        }
+
+
         protected void GridViewCheckout_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "cmd_remove")
@@ -108,7 +143,7 @@ namespace FoodMart_Pro.User
 
             if (ds.Tables[0].Rows.Count == 0)
             {
-                Response.Write("<script>alert('❌ User not found. Please log in again.');</script>");
+                Response.Write("<script>alert('User not found. Please log in again.');</script>");
                 return;
             }
 
@@ -123,7 +158,7 @@ namespace FoodMart_Pro.User
 
             if (cartItems.Rows.Count == 0)
             {
-                Response.Write("<script>alert('❌ Your cart is empty.');</script>");
+                Response.Write("<script>alert('Your cart is empty.');</script>");
                 return;
             }
 
@@ -142,7 +177,7 @@ namespace FoodMart_Pro.User
 
             if (string.IsNullOrEmpty(shippingAddress))
             {
-                Response.Write("<script>alert('❌ Please enter a shipping address.');</script>");
+                Response.Write("<script>alert('Please enter a shipping address.');</script>");
                 return;
             }
 
@@ -161,6 +196,11 @@ namespace FoodMart_Pro.User
                 cmd.ExecuteNonQuery();
             }
 
+            // 8️. Generate Crystal Report
+            generateCrystalReport(orderId);
+
+            Response.Write("<script>alert('Order placed successfully! Generating bill...');</script>");
+
             // 7. Clear cart
             cmd = new SqlCommand("DELETE FROM Cart_tbl WHERE User_id='" + userId + "'", conn);
             cmd.ExecuteNonQuery();
@@ -168,7 +208,7 @@ namespace FoodMart_Pro.User
             fillgrid();
             total();
 
-            Response.Write("<script>alert('✅ Order placed successfully!');</script>");
+            Response.Write("<script>alert('Order placed successfully!');</script>");
         }
 
     }

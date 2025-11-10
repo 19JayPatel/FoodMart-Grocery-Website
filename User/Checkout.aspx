@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true"
     CodeBehind="Checkout.aspx.cs"
     Inherits="FoodMart_Pro.User.Checkout" %>
 
@@ -33,11 +33,23 @@
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:BoundField DataField="Product_name" HeaderText="Product Name" />
+                        <asp:TemplateField HeaderText="Product Name">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("Product_name") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
 
-                        <asp:BoundField DataField="Product_quantity" HeaderText="Quantity" />
+                        <asp:TemplateField HeaderText="Quantity">
+                            <ItemTemplate>
+                                <asp:Label ID="lblQuantity" runat="server" Text='<%# Eval("Product_quantity") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
 
-                        <asp:BoundField DataField="Product_price" HeaderText="Price (₹)" DataFormatString="{0:N2}" />
+                        <asp:TemplateField HeaderText="Price (₹)">
+                            <ItemTemplate>
+                                <asp:Label ID="lblPrice" runat="server" Text='<%# String.Format("{0:N2}", Eval("Product_price")) %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
@@ -45,7 +57,7 @@
                                     CssClass="btn btn-danger btn-sm"
                                     CommandName="cmd_remove"
                                     CommandArgument='<%# Eval("Id") %>'>
-                                    Remove
+                        Remove
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -77,6 +89,7 @@
                 </div>
             </div>
 
+
             <!-- ORDER SUMMARY -->
             <div class="col-lg-4 ms-auto">
                 <div class="card shadow-sm border-0">
@@ -106,6 +119,7 @@
                         <asp:Button ID="btnPlaceOrder" runat="server" Text="Place Order"
                             CssClass="btn btn-primary w-100 fw-bold mt-2"
                             OnClick="btnPlaceOrder_Click" />
+
                     </div>
                 </div>
             </div>

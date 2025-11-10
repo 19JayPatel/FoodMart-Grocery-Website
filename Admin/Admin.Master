@@ -101,7 +101,6 @@
                             <a href="ManageProducts.aspx"><i class="bi bi-box"></i>Products</a>
                             <a href="ManageOrders.aspx"><i class="bi bi-cart"></i>Orders</a>
                             <a href="ManageCustomers.aspx"><i class="bi bi-people"></i>Customers</a>
-                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</asp:LinkButton>
                         </nav>
                     </div>
                 </div>

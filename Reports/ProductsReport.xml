@@ -1,0 +1,177 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Products_tbl">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ProductID" type="xs:int" minOccurs="0" />
+                <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+                <xs:element name="Weight" type="xs:string" minOccurs="0" />
+                <xs:element name="Price" type="xs:string" minOccurs="0" />
+                <xs:element name="CategoryName" type="xs:string" minOccurs="0" />
+                <xs:element name="About" type="xs:string" minOccurs="0" />
+                <xs:element name="ProductImage" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Products_tbl>
+    <ProductID>1</ProductID>
+    <ProductName>Heinz Tomato Ketchup</ProductName>
+    <Weight>750g Bottle</Weight>
+    <Price>299</Price>
+    <CategoryName>Juice</CategoryName>
+    <About>Heinz Tomato Ketchup is made from ripe, juicy tomatoes and a special blend of spices. This ketchup is thick, rich, and full of flavor — an ideal companion for burgers, fries, sandwiches, and snacks. It comes packed in a convenient squeeze bottle for easy use.</About>
+    <ProductImage>../PUImages/heinz-ketchup.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>2</ProductID>
+    <ProductName>Crunchy Cookies</ProductName>
+    <Weight>1 Pack</Weight>
+    <Price>79</Price>
+    <CategoryName>Snack</CategoryName>
+    <About>Crunchy Cookies are baked to golden perfection with a delightful crunch in every bite. Perfect as a snack or with your evening tea, they are made with quality ingredients and no added preservatives.</About>
+    <ProductImage>../PUImages/thumb-biscuits.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>3</ProductID>
+    <ProductName>Nestlé Everyday Dairy Whitener</ProductName>
+    <Weight>1kg Pouch</Weight>
+    <Price>238</Price>
+    <CategoryName>Juice</CategoryName>
+    <About>Nestlé Everyday Dairy Whitener blends smoothly into your tea or coffee, giving it a rich, creamy taste. Made with high-quality milk solids, it dissolves instantly and enhances flavor.</About>
+    <ProductImage>../PUImages/NestleEverydayDairyWhitener.jpg</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>4</ProductID>
+    <ProductName>Cow Fresh Milk</ProductName>
+    <Weight>1 Pack</Weight>
+    <Price>60</Price>
+    <CategoryName>Juice</CategoryName>
+    <About>Cow Fresh Milk is sourced directly from farms and packed hygienically to preserve its natural goodness. It is rich in calcium, protein, and essential nutrients for a healthy lifestyle.</About>
+    <ProductImage>../PUImages/thumb-milk.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>5</ProductID>
+    <ProductName>Aashirvaad Whole Wheat Atta</ProductName>
+    <Weight>5KG Pack</Weight>
+    <Price>400</Price>
+    <CategoryName>Atta</CategoryName>
+    <About>Aashirvaad Atta is made from 100% whole wheat grains, ensuring soft, fluffy rotis every time. It contains natural fiber and nutrients, making it a healthy choice for your family.</About>
+    <ProductImage>../PUImages/AashirvaadWholeWheatAtta.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>6</ProductID>
+    <ProductName>Cherry Tomatoes</ProductName>
+    <Weight>1kg Pack</Weight>
+    <Price>49</Price>
+    <CategoryName>Vegetable</CategoryName>
+    <About>Cherry Tomatoes are juicy, bite-sized, and naturally sweet. Perfect for salads, pasta, or roasting, they add color and flavor to any dish.</About>
+    <ProductImage>../PUImages/CherryTomatoes.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>7</ProductID>
+    <ProductName>Fresh Bananas</ProductName>
+    <Weight>12 Pices</Weight>
+    <Price>115</Price>
+    <CategoryName>Fruit</CategoryName>
+    <About>Fresh Bananas are naturally sweet and full of energy. High in potassium and easy to digest, they make an ideal on-the-go snack or breakfast option.</About>
+    <ProductImage>../PUImages/banana2.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>8</ProductID>
+    <ProductName>Potatoes</ProductName>
+    <Weight>1 KG</Weight>
+    <Price>35</Price>
+    <CategoryName>Vegetable</CategoryName>
+    <About>Versatile and filling, Potatoes are a kitchen essential. Boil, fry, bake, or mash them — they’re a delicious base for countless recipes and rich in carbs and fiber.</About>
+    <ProductImage>../PUImages/Potatoes.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>9</ProductID>
+    <ProductName>Fresh Cabbage</ProductName>
+    <Weight>1 Pice</Weight>
+    <Price>99</Price>
+    <CategoryName>Vegetable</CategoryName>
+    <About>Fresh Cabbage is crisp and packed with nutrients. It is great for stir-fries, salads, soups, and Indian-style dishes like sabzi and paratha fillings.</About>
+    <ProductImage>../PUImages/FreshCabbage.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>10</ProductID>
+    <ProductName>Red Onions</ProductName>
+    <Weight>1kg Pack</Weight>
+    <Price>120</Price>
+    <CategoryName>Vegetable</CategoryName>
+    <About>Red Onions have a strong, sweet flavor and are essential in a wide range of cuisines. Ideal for cooking, garnishing, or eating raw in salads and sandwiches.</About>
+    <ProductImage>../PUImages/RedOnions.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>11</ProductID>
+    <ProductName>Baby Carrots</ProductName>
+    <Weight>1kg Pack</Weight>
+    <Price>59</Price>
+    <CategoryName>Vegetable</CategoryName>
+    <About>Baby Carrots are sweet, tender, and ready to eat. These small, crunchy delights are perfect for snacking or adding to salads, stir-fries, and side dishes.</About>
+    <ProductImage>../PUImages/BabyCarrots2.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>14</ProductID>
+    <ProductName>Kissan Tomato Ketchup</ProductName>
+    <Weight>1.1KG Pack</Weight>
+    <Price>149</Price>
+    <CategoryName>Juice</CategoryName>
+    <About>Tomato Ketchup is a tangy, sweet, and rich condiment made from ripe tomatoes and selected spices. Ideal for snacks, sandwiches, burgers, and fries.</About>
+    <ProductImage>../PUImages/thumb-tomatoketchup.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>15</ProductID>
+    <ProductName>Tata Salt</ProductName>
+    <Weight>1kg Pack</Weight>
+    <Price>39</Price>
+    <CategoryName>Salt &amp; Sugar</CategoryName>
+    <About>Tata Salt is India most trusted and pure iodized salt, known for its consistent quality and health benefits. It provides the right amount of iodine to support mental development and overall well-being. Perfect for everyday cooking, Tata Salt enhances the natural flavor of your dishes and ensures your family gets essential nutrients with every meal.</About>
+    <ProductImage>../PUImages/TataSaltIodized.jfif</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>12</ProductID>
+    <ProductName>Sunflower Oil</ProductName>
+    <Weight>1.5KG</Weight>
+    <Price>118</Price>
+    <CategoryName>Oil</CategoryName>
+    <About>Sunflower Oil is a light, healthy cooking oil rich in Vitamin E and Omega-6. Ideal for frying, sautéing, and everyday cooking with a neutral flavor.</About>
+    <ProductImage>../PUImages/Fortune`SunflowerOil.jfif</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>13</ProductID>
+    <ProductName>Kissan Fruit Jam</ProductName>
+    <Weight>500G JAR</Weight>
+    <Price>89</Price>
+    <CategoryName>Juice</CategoryName>
+    <About>Kissan Fruit Jam is a blend of real fruit pulp and sugar, bursting with fruity flavors. Spread it on bread, parathas, or use it to make delicious desserts.</About>
+    <ProductImage>../PUImages/KissanMixedfruitJam.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>16</ProductID>
+    <ProductName>Maggi 2-Minute Noodles</ProductName>
+    <Weight>PACK OF 6</Weight>
+    <Price>59</Price>
+    <CategoryName>Snack</CategoryName>
+    <About>Maggi 2-Minute Noodles is India’s favorite instant snack, made with high-quality wheat flour and the perfect blend of spices in the tastemaker masala. It’s quick to cook, delicious, and satisfying — ready in just 2 minutes! Ideal for breakfast, snacks, or a late-night hunger fix.</About>
+    <ProductImage>../PUImages/Maggi2MinuteNoodles.png</ProductImage>
+  </Products_tbl>
+  <Products_tbl>
+    <ProductID>17</ProductID>
+    <ProductName>Fresh Broccoli</ProductName>
+    <Weight>500 G</Weight>
+    <Price>119</Price>
+    <CategoryName>Vegetable</CategoryName>
+    <About>Fresh Broccoli is a nutrient-packed green vegetable, ideal for stir-fries, salads, and soups. Known for its antioxidants and fiber, it`s a must-have for a healthy diet.</About>
+    <ProductImage>../PUImages/FreshBroccoli2.png</ProductImage>
+  </Products_tbl>
+</NewDataSet>
